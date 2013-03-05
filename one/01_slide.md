@@ -1,8 +1,11 @@
 !SLIDE transition=fade
-# Just Enough Ruby for Rails #
+# Just Enough 
+# Ruby for Rails
 
-!SLIDE transition=fade
-# a.k.a. Just enough Object Oriented Design #
+!SLIDE bullets transition=fade
+* a.k.a. 
+* just enough
+* Object Oriented design
 
 !SLIDE incremental
 
@@ -12,8 +15,8 @@
 * readers, writers, and accessors
 * inheritance
 
-!SLIDE incremental
-# What you may know already
+!SLIDE smbullets incremental
+# What you may know 
 
 * up to summary #5 of TryRuby.org
 * control structures
@@ -39,6 +42,9 @@
   * it's the thing that is built
 * for example...
 
+!SLIDE center transition=zoom
+![PizzaCat](izzacats_order.jpg)
+
 !SLIDE incremental transition=fade
 # Pizza #
 
@@ -51,8 +57,14 @@
 # Ruby Conventions
   * Classes begin with an Uppercase Character
     * and are CamelCased
-  * variables begin with lowercase characters
+  * variables, methods begin with lowercase characters
     * and\_are\_snake\_cased  
+ 
+!SLIDE
+# More Conventions
+
+* CONSTANTS
+* no javaCase or NSObjectiveCCase
 
 !SLIDE code 
 
