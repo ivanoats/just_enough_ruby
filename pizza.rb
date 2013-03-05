@@ -4,16 +4,14 @@ class Pizza
     @cheese = "mozzarella"
   end
 
-  def dough=(kind)
-    @dough = kind
-  end
+  attr_accessor :dough, :cheese, :crust
 
-  def dough
-    @dough
+  def taste(how)
+    "tastes #{how}!"
   end
 
   def bake
-    puts "putting pizza in oven"\
+    puts "putting pizza in oven"
   end
 end
 
