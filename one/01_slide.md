@@ -133,8 +133,8 @@
 
     @@@ ruby
     my_pizza = Pizza.new
-    my.pizza.dough = "wheat"
-    my.pizza.dough
+    my_pizza.dough = "wheat"
+    my_pizza.dough
     => "wheat"
 
 !SLIDE code
@@ -151,8 +151,8 @@
 
     @@@ ruby
     my_pizza = Pizza.new
-    my.pizza.dough = "wheat"
-    my.pizza.dough
+    my_pizza.dough = "wheat"
+    my_pizza.dough
     => "wheat"
 
 !SLIDE code
