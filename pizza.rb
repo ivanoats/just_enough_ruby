@@ -1,6 +1,16 @@
 class Pizza
-  @dough = "wheat"
-  @cheese = "mozzarella"
+  def initialize
+    @dough = "wheat"
+    @cheese = "mozzarella"
+  end
+
+  def dough=(kind)
+    @dough = kind
+  end
+
+  def dough
+    @dough
+  end
 
   def bake
     puts "putting pizza in oven"\

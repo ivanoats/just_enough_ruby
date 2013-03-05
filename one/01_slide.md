@@ -4,6 +4,23 @@
 !SLIDE transition=fade
 # a.k.a. Just enough Object Oriented Design #
 
+!SLIDE incremental
+
+# What I'll cover today
+
+* objects, classes and instances
+* readers, writers, and accessors
+* inheritance
+
+!SLIDE incremental
+# What you may know already
+
+* up to summary #5 of TryRuby.org
+* control structures
+* iterators
+* if you don't you'll pick it up
+* but best to practice it on [TryRuby.org](http://tryruby.org)
+
 !SLIDE transition=fade incremental
 # What is an Object #
 
@@ -61,6 +78,71 @@
 
     my_pizza.class
     => Pizza
+
+!SLIDE incremental
+
+# Accessors
+
+* set values of instance variables
+* get values of instance variables
+
+!SLIDE code
+
+    @@@ ruby
+    class Pizza
+      @dough = "wheat"
+      ...
+    end
+      
+    my_pizza = Pizza.new
+    my_pizza.dough 
+    => NoMethodError: undefined method `dough' for #<Pizza:0x007fda2a4dcd60>
+    
+!SLIDE code
+
+    @@@ ruby
+    class Pizza
+      def dough=(kind)
+        @dough = kind
+      end
+    
+      def dough
+        @dough
+      end
+    end
+
+!SLIDE code
+
+    @@@ ruby
+    my_pizza = Pizza.new
+    my.pizza.dough = "wheat"
+    my.pizza.dough
+    => "wheat"
+
+!SLIDE code
+
+    @@@ ruby
+    class Pizza
+      
+      attr_reader :dough
+      attr_writer :dough
+
+    end
+
+!SLIDE code
+
+    @@@ ruby
+    my_pizza = Pizza.new
+    my.pizza.dough = "wheat"
+    my.pizza.dough
+    => "wheat"
+
+!SLIDE code
+
+    @@@ ruby
+    class Pizza
+      attr_accessor :dough
+    end
 
 !SLIDE transition=fade
 
