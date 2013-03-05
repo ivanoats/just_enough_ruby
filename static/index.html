@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>My Preso</title>
+  <title>Just Enough Ruby for Rails</title>
 
   <meta name="viewport" content="width=device-width"/>
 
@@ -36,6 +36,8 @@
     
   
 
+  
+    <link rel="stylesheet" href="./file/style.css" type="text/css"/>
   
 
   
@@ -83,12 +85,38 @@
 
 <div id="slides" class="offscreen" style="display:none;">
 <div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/1">
-<h1>Just Enough Ruby for Rails</h1>
+<h1>Just Enough</h1>
+
+<h1>Ruby for Rails</h1>
 </div>
-</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/2">
-<h1>a.k.a. Just enough Object Oriented Design</h1>
+</div><div class="slide" data-transition="fade"><div class="content bullets" ref="one/01_slide/2">
+<ul>
+<li>a.k.a. </li>
+<li>just enough</li>
+<li>Object Oriented design</li>
+</ul>
 </div>
-</div><div class="slide" data-transition="fade"><div class="content incremental" ref="one/01_slide/3">
+</div><div class="slide" data-transition="none"><div class="content incremental" ref="one/01_slide/3">
+<h1>What I'll cover today</h1>
+
+<ul>
+<li>objects, classes and instances</li>
+<li>readers, writers, and accessors</li>
+<li>inheritance</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content smbullets incremental" ref="one/01_slide/4">
+<h1>What you may know</h1>
+
+<ul>
+<li>up to summary #5 of TryRuby.org</li>
+<li>control structures</li>
+<li>iterators</li>
+<li>if you don't you'll pick it up</li>
+<li>but best to practice it on <a href="http://tryruby.org">TryRuby.org</a></li>
+</ul>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content incremental" ref="one/01_slide/5">
 <h1>What is an Object</h1>
 
 <ul>
@@ -98,7 +126,7 @@
 <li>Methods are behavior, or actions</li>
 </ul>
 </div>
-</div><div class="slide" data-transition="fade"><div class="content incremental" ref="one/01_slide/4">
+</div><div class="slide" data-transition="fade"><div class="content incremental" ref="one/01_slide/6">
 <h1>Classes vs Instances</h1>
 
 <ul>
@@ -115,7 +143,11 @@
 <li>for example...</li>
 </ul>
 </div>
-</div><div class="slide" data-transition="fade"><div class="content incremental" ref="one/01_slide/5">
+</div><div class="slide" data-transition="zoom"><div class="content center" ref="one/01_slide/7">
+<p><img src="./file/one/izzacats_order.jpg" width="600" height="523" alt="PizzaCat"/>
+</p>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content incremental" ref="one/01_slide/8">
 <h1>Pizza</h1>
 
 <ul>
@@ -131,7 +163,7 @@
 </ul></li>
 </ul>
 </div>
-</div><div class="slide" data-transition="fade"><div class="content incremental" ref="one/01_slide/6">
+</div><div class="slide" data-transition="fade"><div class="content incremental" ref="one/01_slide/9">
 <h1>Ruby Conventions</h1>
 
 <ul>
@@ -140,7 +172,7 @@
 <ul>
 <li>and are CamelCased</li>
 </ul></li>
-<li>variables begin with lowercase characters
+<li>variables, methods begin with lowercase characters
 
 <ul>
 <li>and_are_snake_cased<br/>
@@ -148,7 +180,15 @@
 </li>
 </ul>
 </div>
-</div><div class="slide" data-transition="none"><div class="content code" ref="one/01_slide/7">
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/10">
+<h1>More Conventions</h1>
+
+<ul>
+<li>CONSTANTS</li>
+<li>no javaCase or NSObjectiveCCase</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="one/01_slide/11">
 <pre class="sh_ruby"><code>class Pizza
   @dough = "wheat"
   @cheese = "mozzarella"
@@ -159,7 +199,7 @@
 
  end </code></pre>
 </div>
-</div><div class="slide" data-transition="none"><div class="content code" ref="one/01_slide/8">
+</div><div class="slide" data-transition="none"><div class="content code" ref="one/01_slide/12">
 <pre class="sh_ruby"><code>my_pizza = Pizza.new
 my_pizza.bake
 
@@ -169,7 +209,61 @@ Pizza is baked
 my_pizza.class
 =&gt; Pizza</code></pre>
 </div>
-</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/9">
+</div><div class="slide" data-transition="none"><div class="content incremental" ref="one/01_slide/13">
+<h1>Accessors</h1>
+
+<ul>
+<li>set values of instance variables</li>
+<li>get values of instance variables</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="one/01_slide/14">
+<pre class="sh_ruby"><code>class Pizza
+  @dough = "wheat"
+  ...
+end
+
+my_pizza = Pizza.new
+my_pizza.dough 
+=&gt; NoMethodError: undefined method `dough' for #&lt;Pizza:0x007fda2a4dcd60&gt;</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="one/01_slide/15">
+<pre class="sh_ruby"><code>class Pizza
+  def dough=(kind)
+    @dough = kind
+  end
+
+  def dough
+    @dough
+  end
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="one/01_slide/16">
+<pre class="sh_ruby"><code>my_pizza = Pizza.new
+my.pizza.dough = "wheat"
+my.pizza.dough
+=&gt; "wheat"</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="one/01_slide/17">
+<pre class="sh_ruby"><code>class Pizza
+
+  attr_reader :dough
+  attr_writer :dough
+
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="one/01_slide/18">
+<pre class="sh_ruby"><code>my_pizza = Pizza.new
+my.pizza.dough = "wheat"
+my.pizza.dough
+=&gt; "wheat"</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="one/01_slide/19">
+<pre class="sh_ruby"><code>class Pizza
+  attr_accessor :dough
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/20">
 <h1>Inheritance</h1>
 
 <ul>
@@ -178,7 +272,7 @@ my_pizza.class
 <li>i.e. a Pepperoni is a kind of pizza</li>
 </ul>
 </div>
-</div><div class="slide" data-transition="none"><div class="content code" ref="one/01_slide/10">
+</div><div class="slide" data-transition="none"><div class="content code" ref="one/01_slide/21">
 <pre class="sh_ruby"><code>class Pepperoni &lt; Pizza
 
   def is_spicy?
@@ -187,7 +281,7 @@ my_pizza.class
 
 end</code></pre>
 </div>
-</div><div class="slide" data-transition="none"><div class="content code" ref="one/01_slide/11">
+</div><div class="slide" data-transition="none"><div class="content code" ref="one/01_slide/22">
 <pre class="sh_ruby"><code>my_second_pizza = Pepperoni.new
 my_second_pizza.bake
 
@@ -196,7 +290,7 @@ Pizza is baked
 my_second_pizza.is_spicy?
 =&gt; true</code></pre>
 </div>
-</div><div class="slide" data-transition="none"><div class="content code" ref="one/01_slide/12">
+</div><div class="slide" data-transition="none"><div class="content code" ref="one/01_slide/23">
 <pre class="sh_ruby"><code>my_second_pizza.class 
 =&gt; Pepperoni
 
@@ -209,7 +303,7 @@ my_second_pizza.is_a? Pizza
 my_pizza.is_a? Pepperoni
 =&gt; false</code></pre>
 </div>
-</div><div class="slide" data-transition="none"><div class="content commandline incremental" ref="one/01_slide/13">
+</div><div class="slide" data-transition="none"><div class="content commandline incremental" ref="one/01_slide/24">
 <h1>IRB is Interactive RuBy</h1>
 
 <pre><code><code class="command">$ irb</code>
@@ -219,7 +313,7 @@ my_pizza.is_a? Pepperoni
 1.9.3p392 :002 &gt;
 </code></code></pre>
 </div>
-</div><div class="slide" data-transition="none"><div class="content commandline incremental" ref="one/01_slide/14">
+</div><div class="slide" data-transition="none"><div class="content commandline incremental" ref="one/01_slide/25">
 <h1>Pry is IRB on Steriods</h1>
 
 <pre><code><code class="command">$ gem install pry</code>
@@ -232,7 +326,7 @@ instance variables: @cheese  @dough
 (opens up class in your $EDITOR)
 </code></code></pre>
 </div>
-</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/15">
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/26">
 <h1>install pry now</h1>
 
 <ul>
@@ -240,7 +334,7 @@ instance variables: @cheese  @dough
 <li><a href="http://vimeo.com/26391171">Watch the screencast</a> (17 mins)</li>
 </ul>
 </div>
-</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/16">
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/27">
 <h1>Questions?</h1>
 </div>
 </div></div>
