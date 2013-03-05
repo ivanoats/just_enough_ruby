@@ -2,14 +2,13 @@
 
 ## To run the presentation
 
-* gem install showoff
 * git clone git@github.com:ivanoats/just_enough_ruby.git
+* bundle install
 * cd just_enough_ruby
-* showoff serve
+* bundle exec showoff serve
 
 ## To try the code
 
-* gem install pry
+* bundle install
 * pry -r ./pizza.rb
-
 
