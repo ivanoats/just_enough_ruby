@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>My Preso</title>
+
+  <meta name="viewport" content="width=device-width"/>
+
+  <link rel="stylesheet" href="./css/reset.css" type="text/css"/>
+  <link rel="stylesheet" href="./css/showoff.css" type="text/css"/>
+
+  <link type="text/css" href="./css/fg.menu.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/theme/ui.all.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/sh_style.css" rel="stylesheet" />
+
+  <script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="./js/jquery.cycle.all.js"></script>
+	<script type="text/javascript" src="./js/jquery-print.js"></script>
+  <script type="text/javascript" src="./js/jquery.batchImageLoad.js"></script>
+
+  <script type="text/javascript" src="./js/jquery.doubletap-0.1.js"></script>
+
+  <script type="text/javascript" src="./js/fg.menu.js"></script>
+  <script type="text/javascript" src="./js/showoff.js"></script>
+  <script type="text/javascript" src="./js/jTypeWriter.js"> </script>
+  <script type="text/javascript" src="./js/sh_main.min.js"></script>
+  <script type="text/javascript" src="./js/core.js"></script>
+  <script type="text/javascript" src="./js/showoffcore.js"></script>
+  <script type="text/javascript" src="./js/coffee-script.js"></script>
+
+  
+    
+      <script type="text/javascript" src="./js/sh_lang/sh_ruby.min.js"></script>
+    
+  
+
+  
+
+  
+
+  <script type="text/javascript">
+  $(function(){
+      setupPreso(false, './');
+  });
+  </script>
+
+</head>
+
+<body>
+
+<a tabindex="0" href="#search-engines" class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all" id="navmenu"><span class="ui-icon ui-icon-triangle-1-s"></span>slides</a>
+<div id="navigation" class="hidden"></div>
+
+<div id="help">
+  <table>
+    <tr><td class="key">z, ?</td><td>toggle help (this)</td></tr>
+    <tr><td class="key">space, &rarr;</td><td>next slide</td></tr>
+    <tr><td class="key">shift-space, &larr;</td><td>previous slide</td></tr>
+    <tr><td class="key">d</td><td>toggle debug mode</td></tr>
+    <tr><td class="key">## &lt;ret&gt;</td><td>go to slide #</td></tr>
+    <tr><td class="key">c, t</td><td>table of contents (vi)</td></tr>
+    <tr><td class="key">f</td><td>toggle footer</td></tr>
+    <tr><td class="key">r</td><td>reload slides</td></tr>
+    <tr><td class="key">n</td><td>toggle notes</td></tr>
+    <tr><td class="key">p</td><td>run preshow</td></tr>
+    <tr><td class="key">P</td><td>toggle pause</td></tr>
+  </table>
+</div>
+
+<div class="buttonNav">
+  <input type="submit" onClick="prevStep();" value="prev"/>
+  <input type="submit" onClick="nextStep();" value="next"/>
+</div>
+
+<div id="preso">loading presentation...</div>
+<div id="footer">
+  <span id="slideInfo"></span>
+  <span id="debugInfo"></span>
+  <span id="notesInfo"></span>
+</div>
+
+<div id="slides" class="offscreen" style="display:none;">
+<div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/1">
+<h1>Just Enough Ruby for Rails</h1>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/2">
+<h1>a.k.a. Just enough Object Oriented Design</h1>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content incremental" ref="one/01_slide/3">
+<h1>What is an Object</h1>
+
+<ul>
+<li>a description in code, of a real thing</li>
+<li>A collection of data and methods</li>
+<li>Data is a value, like a variable</li>
+<li>Methods are behavior, or actions</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content incremental" ref="one/01_slide/4">
+<h1>Classes vs Instances</h1>
+
+<ul>
+<li>a class is the blueprint for the object
+
+<ul>
+<li>it's abstract</li>
+</ul></li>
+<li>an instance is a particular single object
+
+<ul>
+<li>it's the thing that is built</li>
+</ul></li>
+<li>for example...</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content incremental" ref="one/01_slide/5">
+<h1>Pizza</h1>
+
+<ul>
+<li>every pizza has dough, cheese, and tomato
+
+<ul>
+<li>and can be baked</li>
+</ul></li>
+<li>Imagine, you have a pizza in your hand...
+
+<ul>
+<li> what your holding is an instance of a Pizza</li>
+</ul></li>
+</ul>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content incremental" ref="one/01_slide/6">
+<h1>Ruby Conventions</h1>
+
+<ul>
+<li>Classes begin with an Uppercase Character
+
+<ul>
+<li>and are CamelCased</li>
+</ul></li>
+<li>variables begin with lowercase characters
+
+<ul>
+<li>and_are_snake_cased<br/>
+</li></ul>
+</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="one/01_slide/7">
+<pre class="sh_ruby"><code>class Pizza
+  @dough = "wheat"
+  @cheese = "mozzarella"
+
+  def bake
+    puts "putting pizza in oven"
+  end
+
+ end </code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="one/01_slide/8">
+<pre class="sh_ruby"><code>my_pizza = Pizza.new
+my_pizza.bake
+
+Pizza is baked
+=&gt; nil
+
+my_pizza.class
+=&gt; Pizza</code></pre>
+</div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="one/01_slide/9">
+<h1>Inheritance</h1>
+
+<ul>
+<li>Objects can derive methods from other objects</li>
+<li>in ruby we use the &lt; character to specify inheritance</li>
+<li>i.e. a Pepperoni is a kind of pizza</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="one/01_slide/10">
+<pre class="sh_ruby"><code>class Pepperoni &lt; Pizza
+
+  def is_spicy?
+    true
+  end
+
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="one/01_slide/11">
+<pre class="sh_ruby"><code>my_second_pizza = Pepperoni.new
+my_second_pizza.bake
+
+Pizza is baked
+=&gt; nil
+my_second_pizza.is_spicy?
+=&gt; true</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content code" ref="one/01_slide/12">
+<pre class="sh_ruby"><code>my_second_pizza.class 
+=&gt; Pepperoni
+
+my_second_pizza.class.ancestors
+=&gt; [Pepperoni, Pizza, Object ... ] 
+
+my_second_pizza.is_a? Pizza
+=&gt; true
+
+my_pizza.is_a? Pepperoni
+=&gt; false</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content commandline incremental" ref="one/01_slide/13">
+<h1>IRB is Interactive RuBy</h1>
+
+<pre><code><code class="command">$ irb</code>
+<code class="result">1.9.3p392 :001 &gt; puts 2 + 2
+4
+ =&gt; nil
+1.9.3p392 :002 &gt;
+</code></code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content commandline incremental" ref="one/01_slide/14">
+<h1>Pry is IRB on Steriods</h1>
+
+<pre><code><code class="command">$ gem install pry</code>
+<code class="command">$ pry -r ./pizza.rb</code>
+<code class="result">[1] pry(main)&gt; ls Pizza
+Object.methods: yaml_tag
+Pizza#methods: bake
+instance variables: @cheese  @dough
+[2] pry(main)&gt; edit Pizza
+(opens up class in your $EDITOR)
+</code></code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/15">
+<h1>install pry now</h1>
+
+<ul>
+<li><a href="http://pryrepl.org">PryRepl.org</a></li>
+<li><a href="http://vimeo.com/26391171">Watch the screencast</a> (17 mins)</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/01_slide/16">
+<h1>Questions?</h1>
+</div>
+</div></div>
+<div id="pauseScreen">
+  
+</div>
+
+</body>
+</html>
