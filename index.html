@@ -7,7 +7,6 @@
   <title>Just Enough Ruby for Rails</title>
 
   <meta name="viewport" content="width=device-width"/>
-  <meta name="apple-mobile-web-app-capable" content="yes"/>
 
   <link rel="stylesheet" href="./css/reset.css" type="text/css"/>
   <link rel="stylesheet" href="./css/showoff.css" type="text/css"/>
@@ -191,8 +190,11 @@
 </div>
 </div><div class="slide" data-transition="none"><div class="content code" ref="one/01_slide/11">
 <pre class="sh_ruby"><code>class Pizza
-  @dough = "wheat"
-  @cheese = "mozzarella"
+
+  def initialize
+    @dough = "wheat"
+    @cheese = "mozzarella"
+  end
 
   def bake
     puts "putting pizza in oven"
@@ -220,7 +222,10 @@ my_pizza.class
 </div>
 </div><div class="slide" data-transition="none"><div class="content code" ref="one/01_slide/14">
 <pre class="sh_ruby"><code>class Pizza
-  @dough = "wheat"
+
+  def initialize
+    @dough = "wheat"
+  end
   ...
 end
 
