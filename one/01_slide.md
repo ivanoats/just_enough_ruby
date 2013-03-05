@@ -175,7 +175,7 @@
     @@@ ruby
     class Pepperoni < Pizza
     
-      def is_spicy?
+      def spicy?
         true
       end
 
@@ -189,7 +189,7 @@
 
     Pizza is baked
     => nil
-    my_second_pizza.is_spicy?
+    my_second_pizza.spicy?
     => true
 
 !SLIDE code
