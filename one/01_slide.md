@@ -70,8 +70,11 @@
 
     @@@ ruby
     class Pizza
-      @dough = "wheat"
-      @cheese = "mozzarella"
+      
+      def initialize
+        @dough = "wheat"
+        @cheese = "mozzarella"
+      end
       
       def bake
         puts "putting pizza in oven"
@@ -102,7 +105,10 @@
 
     @@@ ruby
     class Pizza
-      @dough = "wheat"
+  
+      def initialize
+        @dough = "wheat"
+      end
       ...
     end
       
